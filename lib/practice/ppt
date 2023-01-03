@@ -1,0 +1,99 @@
+    - How to use packages 정의 및 사용 방식
+    - Keywords 종류 및 정의 및 표현 방식 p41
+    >
+    - 변수 개념, 정의 및 표현 방식
+    > 주로 var 자료형을 사용하여 변수를 선언.
+     자료를 특정하고 싶으면 int,String,double 사용
+     여러 자료형 허용하려면 dynamic 타입을 선언
+
+    - Built-in types 종류, 정의 및 표현 방식
+
+    - 함수 정의, 표현, 사용 방식
+
+    - 식별자 종류 및 방식
+
+    - Null safety 개념, 정의, 사용 방식 p. 40
+    > 2.0에서 추가된 기능으로 컴파일 전에 널 예외를 알 수 있으므로 널에 대한 오류가 발생하지 않도록 작업할 수 있습니다.
+
+    int? couldReturnNullButDoesnt()=>-3; // null 가능
+
+    void main(){
+
+      int? couldReturnNullButisnt = 1; //null로 변경가능
+      List<int?> listhatCouldHoldNulls = [2 , null , 4]; //null로 포함
+      List<int?> nullsList; //리스트 자체가 널일수있음
+      int a = couldReturnNullButisnt; //Null이면 오류
+      int b = listhatCouldHoldNulls.first!; //Null이 아님을 직접표시
+      int c = couldReturnNullButDoesnt()!.abs(); //Null이 아님을 직접표시
+
+      print('a is $a.');
+      print('b is $b.');
+      print('c is $c.');
+    }
+
+    - 연산자 종류 및 표현 방식, 연산자 우선순위
+    >
+    - Oter operators 종류 및 표현 방식
+    > https://docs.jsonata.org/other-operators
+
+    - Control flow statements 종류 및 표현 방식
+
+    - 명령문 종류 및 표현 방식
+    - Function 정의 및 사용 방식
+    - Excetions 종류 및 처리 방식
+    - Calss 개념, 정의, 표현 방식, 변수 및 함수와 클래스간 연결 함수 및 방식
+    - Libraries and visibility 개념 및 사용 방식
+    - Futures, async, Declaring async, await functions 개념 및 사용 방식
+    - Streams 개념 및 사용 방식
+    - JSON 개념 및 사용 방식
+
+    디코딩
+    import 'dart:convert';
+
+    void main(){
+      var jsonString='''[
+        {"score":40},{"score":80}
+      ]''';
+
+      var scores = jsonDecode(jsonString);
+      print(scores is List);
+
+      var firstScore = scores[0];
+      print(firstScore is Map);
+      print(firstScore['score']==40);
+
+    }
+
+    인코딩
+    import 'dart:convert';
+    void main(){
+      var scores=[{'score':40},{'score':80},{'score':100,'overtime':true,'special_guest':null }];
+
+      var jsonText = jsonEncode(scores);
+      print(jsonText == '[{"score":40},{"score":80},{"score":100,"overtime":true,"special_guest":null }]');
+    }
+
+
+
+
+
+
+
+
+
+
+
+    > 서버와의 통신에서 주고 받으면서 상호작용하는 화면에 필요한 데이터를 주고 받는 방식
+    dart:convert를 라이브러리로 포함시켜야함
+
+    - Extension methods 개념 및 사용 방식
+    - Generators 개념 및 사용 방식
+    - Callable classes 개념 및 사용 방식
+    - Isolates 개념, 종류, 사용 방식
+    - 주석 종류 및 사용 방식
+    >
+    - Multi-paltform App 종류 및 사용 방식
+    - Command-line & Server Apps, Web Apps 개념, 종류, 사용 방식
+    - Tools & Techniques 개념, 정의, 종류 및 사용 방식 > debuggers, static analysis, Testing&Optimization
+    - Resource 개념, 종류, 사용 방식
+
