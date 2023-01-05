@@ -352,6 +352,50 @@
         ..team = Team.blue
         ..hello();
     }
+    ----------------------------------------
+    //inheritance 상속
+
+    enum Team{red,blue}
+
+    class Human{
+      final String name;
+
+      Human({required this.name});
+
+      void sayHello(){
+        print("Hello, my name is $name");
+      }
+    }
+
+
+
+    class Player extends Human {
+      //super는 Human을 가리킨다.
+      final Team team;
+
+      Player({
+        required this.team,
+        required String name,
+      }) : super(name:name);
+
+      @override
+      void sayHello(){
+        super.sayHello();
+        print("and i play for${team}");
+
+      }
+    }
+
+    void main(){
+      var player = Player(
+          team: Team.red,
+          name: "nkk",
+      );
+
+      player.sayHello();
+
+    }
+
 
 
     - Libraries and visibility 개념 및 사용 방식
@@ -366,6 +410,31 @@
     - JSON 개념 및 사용 방식
     > 서버와의 통신에서 주고 받으면서 상호작용하는 화면에 필요한 데이터를 주고 받는 방식
       dart:convert를 라이브러리로 포함시켜야함
+
+      var apiData = [
+              {
+                "name":'nkk',
+                "age":15,
+                "team":'red',
+                "xp":1
+              },
+              {
+                "name":'nku',
+                "age":33,
+                "team":'blue',
+                "xp":2
+              },{
+                "name":'nbh',
+                "age":44,
+                "team":'gtr',
+                "xp":3
+              },
+            ];
+
+            apiData.forEach((playJson) {
+              var player = Player.fromJson(playJson);
+              player.hello();
+            });
 
     디코딩
     import 'dart:convert';
