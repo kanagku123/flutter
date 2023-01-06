@@ -1,41 +1,144 @@
 /**
-import 'package:fluent_ui/fluent_ui.dart';
+    import 'package:fluent_ui/fluent_ui.dart';
 
-void main() {
-  runApp(const MyApp());
-}
+    void main() {
+    runApp(const MyApp());
+    }
 
-class MyApp extends StatelessWidget {
-  const MyApp({Key? key}) : super(key: key) ;
+    class MyApp extends StatelessWidget {
+    const MyApp({Key? key}) : super(key: key) ;
 
 
-  @override
-  Widget build(BuildContext context) {
+    @override
+    Widget build(BuildContext context) {
     return const FluentApp(
-      title: 'Windows App',
-      home: MyPage(),
+    title: 'Windows App',
+    home: MyPage(),
     );
-  }
-}
+    }
+    }
 
-class MyPage extends StatelessWidget{
-  const MyPage({Key? key}) : super(key: key);
+    class MyPage extends StatelessWidget{
+    const MyPage({Key? key}) : super(key: key);
 
-  @override
-  Widget build(BuildContext context){
+    @override
+    Widget build(BuildContext context){
     return Container(
-        color: const Color(0xff1A163D)
+    color: const Color(0xff1A163D)
     );
-  }
-}
-**/
+    }
+    }
+ **/
 
 import 'package:flutter/material.dart';
 
-void main() {
-  runApp(const MyApp());
+class Player {
+  String name;
+
+  Player({required this.name});
 }
 
+void main() {
+  var kang = Player(name: "kangku");
+  kang.name;
+  runApp(App());
+}
+
+class App extends StatelessWidget {
+  //빌드메서드 만드는것은 규칙이다.(상속받기위한) // 빌드 메서드는 우리의 위젯UI를 만든다
+  @override // => 부모 클래스에 있는 메서드를 오버라이드한다.
+  Widget build(BuildContext context) {
+    return MaterialApp(
+      home: Scaffold(
+        backgroundColor: Color(0xFF181818), //name parameter들
+        body: Padding(
+            padding: EdgeInsets.symmetric(
+              horizontal: 40,
+            ),
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              //수직 배열
+              children: [
+                SizedBox(
+                  height: 80,
+                ),
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.end,
+                  //수평 배열
+                  children: [
+                    //하나만 넣으려면child,여러개면 children
+                    Column(
+                      crossAxisAlignment: CrossAxisAlignment.end,
+                      children: [
+                        Text(
+                          '안녕하세요 나경규님!',
+                          style: TextStyle(
+                              color: Colors.white,
+                              fontSize: 20,
+                              fontWeight: FontWeight.w600),
+                        ),
+                        Text(
+                          '다시 만나서 반가워요!',
+                          style: TextStyle(
+                            color: Colors.white.withOpacity(0.5), //투명도
+                            fontSize: 15,
+                          ),
+                        ),
+                      ],
+                    )
+                  ],
+                ),
+                SizedBox(
+                  height: 120,
+                ),
+                Text(
+                  "ToTal Balance",
+                  style: TextStyle(
+                    color: Colors.white.withOpacity(0.8),
+                    fontSize: 22,
+                  ),
+                ),
+                SizedBox(
+                  height: 5,
+                ),
+                Text(
+                  "\$5 194 482",
+                  style: TextStyle(
+                    fontSize: 35,
+                    fontWeight: FontWeight.w800,
+                    color: Colors.white.withOpacity(0.8),
+                  ),
+                ),
+                SizedBox(
+                  height: 20,
+                ),
+                Row(
+                  children: [
+                    Container(
+                      //div 같은 박스
+                      decoration: BoxDecoration(
+                        color: Colors.amber,
+                        borderRadius: BorderRadius.circular(45),
+                      ),
+                      child: Padding(
+                        padding:
+                            EdgeInsets.symmetric(vertical: 15, horizontal: 40),
+                        child: Text('Transfer',
+                            style: TextStyle(
+                              fontSize: 15,
+                            )),
+                      ),
+                    ),
+                  ],
+                )
+              ],
+            )),
+      ),
+    ); // Material은 구글, Cupertino는 IOS
+  }
+}
+
+/*
 class MyApp extends StatelessWidget {
   const MyApp({super.key});
 
@@ -54,7 +157,7 @@ class MyApp extends StatelessWidget {
         // or simply save your changes to "hot reload" in a Flutter IDE).
         // Notice that the counter didn't reset back to zero; the application
         // is not restarted.
-        primarySwatch: Colors.blue,
+        primarySwatch: Colors.red,
       ),
       home: const MyHomePage(title: 'Flutter Demo Home Page'),
     );
@@ -125,3 +228,4 @@ class _MyHomePageState extends State<MyHomePage> {
     );
   }
 }
+*/
