@@ -92,7 +92,7 @@ class App extends StatelessWidget {
                   ],
                 ),
                 SizedBox(
-                  height: 20,
+                  height: 50,
                 ),
                 Text(
                   "ToTal Balance",
@@ -157,22 +157,40 @@ class App extends StatelessWidget {
                   height: 15,
                 ),
                 CurrencyCard(
-                  name: 'skrudrb',
+                  name: '나',
                   iconData: Icons.ice_skating_rounded,
                   isInverted: false,
                   order: 0,
                 ),
                 CurrencyCard(
-                  name: 'kanagku123',
+                  name: '는',
                   iconData: Icons.access_alarms_rounded,
                   isInverted: true,
                   order: 1,
                 ),
                 CurrencyCard(
-                  name: '나경규',
+                  name: '경',
                   iconData: Icons.add_a_photo_outlined,
                   isInverted: false,
                   order: 2,
+                ),
+                CurrencyCard(
+                  name: '규',
+                  iconData: Icons.accessibility,
+                  isInverted: true,
+                  order: 3,
+                ),
+                CurrencyCard(
+                  name: '다',
+                  iconData: Icons.account_balance_outlined,
+                  isInverted: false,
+                  order: 4,
+                ),
+                CurrencyCard(
+                  name: '!!!!!',
+                  iconData: Icons.add_chart_outlined,
+                  isInverted: true,
+                  order: 5,
                 ),
               ],
             ),
