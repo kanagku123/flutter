@@ -31,6 +31,8 @@
  **/
 
 import 'package:flutter/material.dart';
+import 'package:pts2/widgets/button.dart';
+import 'package:pts2/widgets/card.dart';
 
 class Player {
   String name;
@@ -52,87 +54,162 @@ class App extends StatelessWidget {
       home: Scaffold(
         backgroundColor: Color(0xFF181818), //name parameter들
         body: Padding(
-            padding: EdgeInsets.symmetric(
-              horizontal: 40,
-            ),
-            child: Column(
-              crossAxisAlignment: CrossAxisAlignment.start,
-              //수직 배열
-              children: [
-                SizedBox(
-                  height: 80,
-                ),
-                Row(
-                  mainAxisAlignment: MainAxisAlignment.end,
-                  //수평 배열
-                  children: [
-                    //하나만 넣으려면child,여러개면 children
-                    Column(
-                      crossAxisAlignment: CrossAxisAlignment.end,
-                      children: [
-                        Text(
-                          '안녕하세요 나경규님!',
-                          style: TextStyle(
-                              color: Colors.white,
-                              fontSize: 20,
-                              fontWeight: FontWeight.w600),
+          padding: EdgeInsets.symmetric(
+            horizontal: 20,
+          ),
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            //수직 배열
+            children: [
+              SizedBox(
+                height: 80,
+              ),
+              Row(
+                mainAxisAlignment: MainAxisAlignment.end,
+                //수평 배열
+                children: [
+                  //하나만 넣으려면child,여러개면 children
+                  Column(
+                    crossAxisAlignment: CrossAxisAlignment.end,
+                    children: [
+                      Text(
+                        '안녕하세요 나경규님!',
+                        style: TextStyle(
+                            color: Colors.white,
+                            fontSize: 20,
+                            fontWeight: FontWeight.w600),
+                      ),
+                      Text(
+                        '다시 만나서 반가워요!',
+                        style: TextStyle(
+                          color: Colors.white.withOpacity(0.5), //투명도
+                          fontSize: 15,
                         ),
-                        Text(
-                          '다시 만나서 반가워요!',
-                          style: TextStyle(
-                            color: Colors.white.withOpacity(0.5), //투명도
-                            fontSize: 15,
+                      ),
+                    ],
+                  )
+                ],
+              ),
+              SizedBox(
+                height: 60,
+              ),
+              Text(
+                "ToTal Balance",
+                style: TextStyle(
+                  color: Colors.white.withOpacity(0.8),
+                  fontSize: 22,
+                ),
+              ),
+              SizedBox(
+                height: 5,
+              ),
+              Text(
+                "\$5 194 482",
+                style: TextStyle(
+                  fontSize: 35,
+                  fontWeight: FontWeight.w800,
+                  color: Colors.white.withOpacity(0.8),
+                ),
+              ),
+              SizedBox(
+                height: 20,
+              ),
+              Row(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                children: [
+                  const Button(
+                    text: "transfor",
+                    bgColor: Colors.amber,
+                    textColor: Colors.black,
+                  ),
+                  const Button(
+                    text: "Request",
+                    bgColor: Colors.amber,
+                    textColor: Colors.black,
+                  ),
+                ],
+              ),
+              SizedBox(
+                height: 60,
+              ),
+              Row(
+                crossAxisAlignment: CrossAxisAlignment.end,
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                children: [
+                  Text(
+                    '지갑',
+                    style: TextStyle(
+                      color: Colors.white,
+                      fontSize: 30,
+                      fontWeight: FontWeight.w600,
+                    ),
+                  ),
+                  Text(
+                    'View All',
+                    style: TextStyle(
+                      color: Colors.white,
+                    ),
+                  ),
+                ],
+              ),
+              SizedBox(
+                height: 15,
+              ),
+              Container(
+                clipBehavior: Clip.hardEdge, //튀어나온 테두리 제거
+                decoration: BoxDecoration(
+                  color: Color(0xff383131),
+                  borderRadius: BorderRadius.circular(25),
+                ),
+                child: Padding(
+                  padding: const EdgeInsets.all(30),
+                  child: Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    children: [
+                      Column(
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        children: [
+                          Text(
+                            "xxxx   원",
+                            style: TextStyle(
+                              fontWeight: FontWeight.w800,
+                              fontSize: 20,
+                              color: Colors.white,
+                            ),
+                          ),
+                          SizedBox(
+                            height: 10,
+                          ),
+                          Text(
+                            "xxxxx  원",
+                            style: TextStyle(
+                              fontWeight: FontWeight.w800,
+                              fontSize: 10,
+                              color: Colors.white.withOpacity(0.5),
+                            ),
+                          ),
+                        ],
+                      ),
+                      Transform.scale(
+                        //아이콘 크기 위치,위치
+                        scale: 2.2,
+                        child: Transform.translate(
+                          offset: const Offset(-5, 10),
+                          child: const Icon(
+                            Icons.euro_rounded,
+                            color: Colors.white,
+                            size: 88,
                           ),
                         ),
-                      ],
-                    )
-                  ],
-                ),
-                SizedBox(
-                  height: 120,
-                ),
-                Text(
-                  "ToTal Balance",
-                  style: TextStyle(
-                    color: Colors.white.withOpacity(0.8),
-                    fontSize: 22,
-                  ),
-                ),
-                SizedBox(
-                  height: 5,
-                ),
-                Text(
-                  "\$5 194 482",
-                  style: TextStyle(
-                    fontSize: 35,
-                    fontWeight: FontWeight.w800,
-                    color: Colors.white.withOpacity(0.8),
-                  ),
-                ),
-                SizedBox(
-                  height: 20,
-                ),
-                Row(
-                  children: [
-                    Container(
-                      //div 같은 박스
-                      decoration: BoxDecoration(
-                        color: Colors.amber,
-                        borderRadius: BorderRadius.circular(45),
                       ),
-                      child: Padding(
-                        padding:
-                            EdgeInsets.symmetric(vertical: 15, horizontal: 40),
-                        child: Text('Transfer',
-                            style: TextStyle(
-                              fontSize: 15,
-                            )),
-                      ),
-                    ),
-                  ],
-                )
-              ],
-            )),
+                    ],
+                  ),
+
+                ),
+              ),
+            ],
+          ),
+        ),
       ),
     ); // Material은 구글, Cupertino는 IOS
   }
