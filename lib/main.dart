@@ -53,110 +53,129 @@ class App extends StatelessWidget {
     return MaterialApp(
       home: Scaffold(
         backgroundColor: Color(0xFF181818), //name parameter들
-        body: Padding(
-          padding: EdgeInsets.symmetric(
-            horizontal: 20,
-          ),
-          child: Column(
-            crossAxisAlignment: CrossAxisAlignment.start,
-            //수직 배열
-            children: [
-              SizedBox(
-                height: 80,
-              ),
-              Row(
-                mainAxisAlignment: MainAxisAlignment.end,
-                //수평 배열
-                children: [
-                  //하나만 넣으려면child,여러개면 children
-                  Column(
-                    crossAxisAlignment: CrossAxisAlignment.end,
-                    children: [
-                      Text(
-                        '안녕하세요 나경규님!',
-                        style: TextStyle(
-                            color: Colors.white,
-                            fontSize: 20,
-                            fontWeight: FontWeight.w600),
-                      ),
-                      Text(
-                        '다시 만나서 반가워요!',
-                        style: TextStyle(
-                          color: Colors.white.withOpacity(0.5), //투명도
-                          fontSize: 15,
+        body: SingleChildScrollView(   //화면 오버플로우 뷰를 스크롤 할 수 있음
+          child: Padding(
+            padding: EdgeInsets.symmetric(
+              horizontal: 20,
+            ),
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              //수직 배열
+              children: [
+                SizedBox(
+                  height: 30,
+                ),
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.end,
+                  //수평 배열
+                  children: [
+                    //하나만 넣으려면child,여러개면 children
+                    Column(
+                      crossAxisAlignment: CrossAxisAlignment.end,
+                      children: [
+                        Text(
+                          '안녕하세요 나경규님!',
+                          style: TextStyle(
+                              color: Colors.white,
+                              fontSize: 20,
+                              fontWeight: FontWeight.w600),
                         ),
+                        Text(
+                          '다시 만나서 반가워요!',
+                          style: TextStyle(
+                            color: Colors.white.withOpacity(0.5), //투명도
+                            fontSize: 15,
+                          ),
+                        ),
+                      ],
+                    )
+                  ],
+                ),
+                SizedBox(
+                  height: 20,
+                ),
+                Text(
+                  "ToTal Balance",
+                  style: TextStyle(
+                    color: Colors.white.withOpacity(0.8),
+                    fontSize: 22,
+                  ),
+                ),
+                SizedBox(
+                  height: 5,
+                ),
+                Text(
+                  "\$5 194 482",
+                  style: TextStyle(
+                    fontSize: 35,
+                    fontWeight: FontWeight.w800,
+                    color: Colors.white.withOpacity(0.8),
+                  ),
+                ),
+                SizedBox(
+                  height: 20,
+                ),
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  children: [
+                    const Button(
+                      text: "transfor",
+                      bgColor: Colors.amber,
+                      textColor: Colors.black,
+                    ),
+                    const Button(
+                      text: "Request",
+                      bgColor: Colors.amber,
+                      textColor: Colors.black,
+                    ),
+                  ],
+                ),
+                SizedBox(
+                  height: 30,
+                ),
+                Row(
+                  crossAxisAlignment: CrossAxisAlignment.end,
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  children: [
+                    Text(
+                      '지갑',
+                      style: TextStyle(
+                        color: Colors.white,
+                        fontSize: 30,
+                        fontWeight: FontWeight.w600,
                       ),
-                    ],
-                  )
-                ],
-              ),
-              SizedBox(
-                height: 60,
-              ),
-              Text(
-                "ToTal Balance",
-                style: TextStyle(
-                  color: Colors.white.withOpacity(0.8),
-                  fontSize: 22,
-                ),
-              ),
-              SizedBox(
-                height: 5,
-              ),
-              Text(
-                "\$5 194 482",
-                style: TextStyle(
-                  fontSize: 35,
-                  fontWeight: FontWeight.w800,
-                  color: Colors.white.withOpacity(0.8),
-                ),
-              ),
-              SizedBox(
-                height: 20,
-              ),
-              Row(
-                mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                children: [
-                  const Button(
-                    text: "transfor",
-                    bgColor: Colors.amber,
-                    textColor: Colors.black,
-                  ),
-                  const Button(
-                    text: "Request",
-                    bgColor: Colors.amber,
-                    textColor: Colors.black,
-                  ),
-                ],
-              ),
-              SizedBox(
-                height: 60,
-              ),
-              Row(
-                crossAxisAlignment: CrossAxisAlignment.end,
-                mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                children: [
-                  Text(
-                    '지갑',
-                    style: TextStyle(
-                      color: Colors.white,
-                      fontSize: 30,
-                      fontWeight: FontWeight.w600,
                     ),
-                  ),
-                  Text(
-                    'View All',
-                    style: TextStyle(
-                      color: Colors.white,
+                    Text(
+                      'View All',
+                      style: TextStyle(
+                        color: Colors.white,
+                      ),
                     ),
-                  ),
-                ],
-              ),
-              SizedBox(
-                height: 15,
-              ),
-              CurrencyCard('skrudrb', Icons.ice_skating_rounded),
-            ],
+                  ],
+                ),
+                SizedBox(
+                  height: 15,
+                ),
+                CurrencyCard(
+                  name: 'skrudrb',
+                  iconData: Icons.ice_skating_rounded,
+                  isInverted: false,
+                  order: 0,
+                ),
+                CurrencyCard(
+                  name: 'kanagku123',
+                  iconData: Icons.access_alarms_rounded,
+                  isInverted: true,
+                  order: 1,
+                ),
+                CurrencyCard(
+                  name: '나경규',
+                  iconData: Icons.add_a_photo_outlined,
+                  isInverted: false,
+                  order: 2,
+                ),
+              ],
+            ),
           ),
         ),
       ),
