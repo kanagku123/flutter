@@ -1,7 +1,5 @@
-    - How to use packages 정의 및 사용 방식
-    >
-
     - Keywords 종류 및 정의 및 표현 방식 p41
+    https://beomseok95.tistory.com/306#UseCase_-keyword
     >
     var name = 'skrudrb';
     dynamic name1;  if(name1 is int){name1.} 항상 쓰기보다 유용할 수 있을 경우 쓰는게 중요
@@ -153,6 +151,14 @@
 -----------------------------------------------------------------------------------------------------
     - Function 정의 및 사용 방식
     >
+    1. 변수가 함수를 참조할수 있다.
+    2. 다른 함수의 인자로 함수 전달 가능
+    3. 이름 있는 선택 매개변수
+    4. 위치적 선택 매개변수
+    5. 익명 함수 및 람다
+
+
+    -=-----------------------------------------
     String sayHello(String A){return 'Hello $A nice to meet';}   // 1
     String sayHello(String A) => 'Hello $A nice to meet';       // 1번과 같은 의미
 
@@ -473,6 +479,12 @@
 
     - 주석 종류 및 사용 방식
     >
+    // - 한줄 주석
+     /* */ - 여러줄 주석
+     /// 문서 주석
+
+     단축키 Ctrl+/
+
     - Multi-paltform App 종류 및 사용 방식
 
     - Command-line & Server Apps, Web Apps 개념, 종류, 사용 방식
