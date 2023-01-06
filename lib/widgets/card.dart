@@ -50,7 +50,7 @@ class CurrencyCard extends StatelessWidget {
               scale: 2.2,
               child: Transform.translate(
                 offset: const Offset(-5, 10),
-                child: const Icon(
+                child: Icon(
                   iconData,
                   color: Colors.white,
                   size: 88,
