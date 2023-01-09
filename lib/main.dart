@@ -63,7 +63,7 @@ class App extends StatelessWidget {
               //수직 배열
               children: [
                 SizedBox(
-                  height: 30,
+                  height: 80,
                 ),
                 Row(
                   mainAxisAlignment: MainAxisAlignment.end,

@@ -27,11 +27,8 @@ void main(){
 }
  **/
 
-class WannabeFunction {
-  String call(String a, String b, String c) => '$a $b $c! ';
+
+void main(){
+
 }
 
-var wf = WannabeFunction();
-var out = wf('Hi', 'there,', 'gang');
-
-main() => print(out);
