@@ -27,18 +27,11 @@ void main(){
 }
  **/
 
-String createOrderMessage() {
-  var order = fetchUserOrder();
-  return 'Your order is: $order';
+class WannabeFunction {
+  String call(String a, String b, String c) => '$a $b $c! ';
 }
 
-Future<String> fetchUserOrder() =>
-    Future.delayed(
-      const Duration(seconds: 2),
-          () => 'Large Latte',
-    );
+var wf = WannabeFunction();
+var out = wf('Hi', 'there,', 'gang');
 
-void main() {
-  print('Fetching user order...');
-  print(createOrderMessage());
-}
+main() => print(out);
